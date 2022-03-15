@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+class heater {
+public:
+    int temperature;
+    heater()
+    {
+        temperature = 15;
+    }
+    void warmer() {
+        int x = 5;
+        temperature = temperature + x;
+        cout << "Temperature= " << temperature << endl;
+    }
+    void cooler() {
+        int x = 5;
+        temperature = temperature - x;
+        cout << "Temperature= " << temperature << endl;
+
+    }
+};
+int main()
+{
+    cout << "Hello World!";
+    heater s1;
+    int x, y, k = 0;
+
+    cout << "How many times do you want to use this setting\n";
+    cin >> y;
+    //cout << "Enter temperature adjustment setting\n" << "1-Heat by 5*\n" << "2-Cool by 5*\n";
+   // cin >> x;
+   // for (int i = 0; i < y; i++) {
+     //   cin >> x;
+    //}
+    do {
+
+        cout << "Enter temperature adjustment setting\n" << "1-Heat by 5*\n" << "2-Cool by 5*\n";
+        cin >> x;
+        switch (x) {
+        case 1:
+            s1.warmer();
+            k++;
+            break;
+        case 2:
+            s1.cooler();
+            k++;
+            break;
+        }
+
+    } while (k < y);
+}
