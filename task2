@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+class parity {
+
+public:
+    int max = 5;
+    int* a = new int[max];
+    int n = max;
+
+    parity() {
+        for (int i = 0; i < max; i++) {
+         a[i] = 0;            
+        }
+    }
+    void put();
+
+    void print();
+   
+
+    void dellete();
+void test(void);
+};
+void parity::put() {
+        int num;
+
+        int max = 10;           
+        int* a = new int[max];  
+        int n = 0;
+
+        
+        while (cin >> a[n]) {
+            n++;
+            if (n >= max) { 
+                max = max + 1;
+                int* temp = new int[max]; 
+                for (int i = 0; i < n; i++) {
+                    temp[i] = a[i];     
+                }
+                delete[] a;             
+                a = temp;              
+            }
+        }
+        for (int i = 0; i < max; i++) {
+            a[i] = 0;
+        }
+   cout << "Enter element to be entered";
+ cin >> num;
+    //     int* a = new int[max + 1];
+    a[max + 1] = num;
+      for (int i = 0; i < max + 1; i++) {
+          cout << a[i] << " ";
+    }
+    }
+    void parity::print() {
+        for (int i = 0; i < max; i++) {
+            cout << a[i] << " ";
+        }
+        
+    }
+
+void parity::dellete() {
+    int num;
+    for (int i = 0; i < max; i++) {
+        a[i] = 0;
+    }
+    int max = 10;
+    int* a = new int[max];
+    int n = 0;
+
+
+    while (cin >> a[n]) {
+        n++;
+        if (n >= max) {
+            max = max + 1;
+            int* temp = new int[max];
+            for (int i = 0; i < n; i++) {
+                temp[i] = a[i];
+            }
+            delete[] a;
+            a = temp;
+        }
+    }
+    int* a = new int[max - 1];
+    for (int i = 0; i < max; i++) {
+        cout << a[i] << " ";
+    }
+}
+void parity::test() {}
+
+
+int main()
+
+{
+    cout << "Hello World!\n";
+    parity s1;
+    int x;
+    cout << "1-Add another element\n" << "2-Print all the elements\n" << "3-Delete last element\n" << "4-Tell if even or odd\n";
+    cin >> x;
+    switch (x) {
+    case 1:
+        s1.put();
+        break;
+    case 2:
+        s1.print();
+        break;
+    case 3:
+        s1.dellete();
+        break;
+    case 4:
+        s1.test();
+        break;
+    }
+}
